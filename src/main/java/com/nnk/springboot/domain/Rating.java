@@ -26,7 +26,7 @@ public class Rating {
 	@NotBlank
 	@NotNull
 	String fitchRating;
-//	@NotBlank
+//	@NotBlank  test ne passe pas avec "manque validator"
 	@NotNull
 	Integer orderNumber;
 	public Integer getId() {
