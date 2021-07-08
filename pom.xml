@@ -70,7 +70,7 @@
 </dependency>
 		
 		
-		
+<!-- 08/07 vs Invocation of init method failed; nested exception is java.lang.NoClassDefFoundError: javax/xml/bind/JAXBException; Using generated security password: 6dd7f243-8763-4f22-b647-f7916dbd1d1e -->		
 		<!-- API, java.xml.bind module -->
 <dependency>
     <groupId>jakarta.xml.bind</groupId>
