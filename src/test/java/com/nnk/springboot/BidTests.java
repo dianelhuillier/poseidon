@@ -39,10 +39,9 @@ public class BidTests {
 		bid.setBidQuantity(20d);
 		bid = bidListRepository.save(bid);
 		Assert.assertEquals(bid.getBidQuantity(), 20d, 20d);
-System.out.println("BIIIIIIID" + bid);
+
 		// Find
 		List<BidList> listResult = iBidlListService.findAllBidList();
-		System.out.println("SYSOUT" + listResult);
 		Assert.assertTrue(listResult.size() > 0);
 
 		// Delete

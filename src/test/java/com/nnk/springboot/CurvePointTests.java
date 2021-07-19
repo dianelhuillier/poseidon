@@ -2,6 +2,7 @@ package com.nnk.springboot;
 
 import com.nnk.springboot.domain.CurvePoint;
 import com.nnk.springboot.repositories.CurvePointRepository;
+import com.nnk.springboot.services.ICurvePointService;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -24,7 +25,8 @@ public class CurvePointTests {
 	@Autowired
 	private CurvePointRepository curvePointRepository;
 
-	
+	@Autowired
+	ICurvePointService iCurvePointService;
 
 
 	
@@ -45,7 +47,7 @@ public class CurvePointTests {
 		Assert.assertTrue(curvePoint.getCurveId() == 20);
 
 		// Find
-		List<CurvePoint> listResult = curvePointRepository.findAll();
+		List<CurvePoint> listResult = iCurvePointService.findAllCurvePoint();
 		Assert.assertTrue(listResult.size() > 0);
 
 		// Delete
