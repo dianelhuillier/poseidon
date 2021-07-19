@@ -28,7 +28,7 @@ public class BidTests {
 	@Test
 	@Transactional
 	public void bidListTest() {
-		BidList bid = new BidList(1, "Account Test", "Type Test", 10d, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
+		BidList bid = new BidList(null, "Account Test", "Type Test", 10d, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
 
 		// Save
 		bid = bidListRepository.save(bid);
