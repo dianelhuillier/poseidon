@@ -22,7 +22,8 @@ public class BidList {
     // TODO: Map columns in data table BIDLIST with corresponding java fields
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-	Integer BidListId;
+    @Column(name = "id")
+	Integer id;
 	String account;
 	String type;
 //	@Digits(fraction = 0, integer = 0)
@@ -51,11 +52,12 @@ public class BidList {
 	String dealType;
 	String sourceListId;
 	String side;
-	public Integer getBidListId() {
-		return BidListId;
+	
+	public Integer getId() {
+		return id;
 	}
-	public void setBidListId(Integer bidListId) {
-		BidListId = bidListId;
+	public void setId(Integer id) {
+		this.id = id;
 	}
 	public String getAccount() {
 		return account;

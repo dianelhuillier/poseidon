@@ -2,6 +2,8 @@ package com.nnk.springboot;
 
 import com.nnk.springboot.domain.BidList;
 import com.nnk.springboot.repositories.BidListRepository;
+import com.nnk.springboot.services.IBidlListService;
+
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -20,29 +22,32 @@ public class BidTests {
 
 	@Autowired
 	private BidListRepository bidListRepository;
+	@Autowired
+	IBidlListService iBidlListService;
 
 	@Test
 	@Transactional
 	public void bidListTest() {
-		BidList bid = new BidList(null, "Account Test", "Type Test", 10d, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
+		BidList bid = new BidList(1, "Account Test", "Type Test", 10d, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
 
 		// Save
 		bid = bidListRepository.save(bid);
-		Assert.assertNotNull(bid.getBidListId());
+		Assert.assertNotNull(bid.getId());
 		Assert.assertEquals(bid.getBidQuantity(), 10d, 10d);
 
 		// Update
 		bid.setBidQuantity(20d);
 		bid = bidListRepository.save(bid);
 		Assert.assertEquals(bid.getBidQuantity(), 20d, 20d);
-
+System.out.println("BIIIIIIID" + bid);
 		// Find
-		List<BidList> listResult = bidListRepository.findAll();
+		List<BidList> listResult = iBidlListService.findAllBidList();
+		System.out.println("SYSOUT" + listResult);
 		Assert.assertTrue(listResult.size() > 0);
 
 		// Delete
-		Integer id = bid.getBidListId();
-		bidListRepository.delete(bid);
+		Integer id = bid.getId();
+		iBidlListService.delete(bid);
 		Optional<BidList> bidList = bidListRepository.findById(id);
 		Assert.assertFalse(bidList.isPresent());
 	}
