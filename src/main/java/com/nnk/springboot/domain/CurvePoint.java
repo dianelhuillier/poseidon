@@ -32,14 +32,14 @@ public class CurvePoint {
     @NotNull
 	Integer curveId;
 	@NotNull
-//	@NotBlank
+	@NotBlank
 	Timestamp asOfDate;
-//	@Length need validator for test pass
+	@Length 
 	Double term;
-//	@NotBlank
+	@NotBlank
 	Double value;
-//	@NotNull
-//	@NotBlank
+	@NotNull
+	@NotBlank
 	Timestamp creationDate;
 	
 	public Integer getId() {

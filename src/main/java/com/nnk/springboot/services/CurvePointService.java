@@ -7,6 +7,7 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.nnk.springboot.domain.BidList;
 import com.nnk.springboot.domain.CurvePoint;
 import com.nnk.springboot.repositories.CurvePointRepository;
 
@@ -33,5 +34,8 @@ public class CurvePointService implements ICurvePointService{
 		// TODO Auto-generated method stub
 		return curvePointRepository.save(curvePoint);
 	}
+
+
+
 
 }

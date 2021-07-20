@@ -27,13 +27,13 @@ public class BidList {
 	String account;
 	String type;
 //	@Digits(fraction = 0, integer = 0)
-//	@NotBlank 
+	@NotBlank 
 	Double bidQuantity;
 //	@Digits(fraction = 0, integer = 0)
-//	@NotBlank 
+	@NotBlank 
 	Double askQuantity;
 //	@Digits(fraction = 0, integer = 0)
-//	@NotBlank 
+	@NotBlank 
 	Double bid;
 	Double ask;
 	String benchmark;

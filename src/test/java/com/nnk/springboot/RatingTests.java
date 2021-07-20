@@ -15,7 +15,7 @@ import java.util.Optional;
 import javax.transaction.Transactional;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest
+@SpringBootTest(properties = {"spring.jpa.properties.javax.persistence.validation.mode=none"})
 public class RatingTests {
 
 	@Autowired

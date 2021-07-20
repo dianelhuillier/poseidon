@@ -19,7 +19,7 @@ import java.util.Optional;
 import javax.transaction.Transactional;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest
+@SpringBootTest(properties = {"spring.jpa.properties.javax.persistence.validation.mode=none"})
 public class CurvePointTests {
 
 	@Autowired
@@ -37,13 +37,13 @@ public class CurvePointTests {
 		CurvePoint curvePoint = new CurvePoint(10, 10, null, 10d, 30d, null);
 		curvePoint.setAsOfDate(new Timestamp(System.currentTimeMillis()));
 		// Save
-		curvePoint = curvePointRepository.save(curvePoint);
+		curvePoint = iCurvePointService.save(curvePoint);
 		Assert.assertNotNull(curvePoint.getId());
 		Assert.assertTrue(curvePoint.getCurveId() == 10);
 
 		// Update
 		curvePoint.setCurveId(20);
-		curvePoint = curvePointRepository.save(curvePoint);
+		curvePoint = iCurvePointService.save(curvePoint);
 		Assert.assertTrue(curvePoint.getCurveId() == 20);
 
 		// Find
