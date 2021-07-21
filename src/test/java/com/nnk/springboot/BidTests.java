@@ -31,13 +31,13 @@ public class BidTests {
 		BidList bid = new BidList(null, "Account Test", "Type Test", 10d, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
 
 		// Save
-		bid = bidListRepository.save(bid);
+		bid = iBidlListService.save(bid);
 		Assert.assertNotNull(bid.getId());
 		Assert.assertEquals(bid.getBidQuantity(), 10d, 10d);
 
 		// Update
 		bid.setBidQuantity(20d);
-		bid = bidListRepository.save(bid);
+		bid = iBidlListService.save(bid);
 		Assert.assertEquals(bid.getBidQuantity(), 20d, 20d);
 
 		// Find

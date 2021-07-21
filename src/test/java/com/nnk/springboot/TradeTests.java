@@ -28,16 +28,14 @@ public class TradeTests {
 
 	@Test
 	@Transactional
-	
+	//null, "Trade Account", "Type"
 	public void tradeTest() {
-		Trade trade = new Trade(1, "Trade Account", "Type", 10d, 20d, 10d, 20d, null) ;
+		Trade trade = new Trade(1, "Trade Account", "Type") ;
 		trade.setTradeDate(new Timestamp(System.currentTimeMillis()));
-		Timestamp tradeDate = trade.getTradeDate();
-		System.err.println(tradeDate);
 
 		// Save
 		trade = iTradeService.save(trade);
-		Assert.assertNotNull(trade.getTradeId());
+		Assert.assertNotNull(trade.getId());
 		Assert.assertTrue(trade.getAccount().equals("Trade Account"));
 
 		// Update
@@ -50,8 +48,8 @@ public class TradeTests {
 		Assert.assertTrue(listResult.size() > 0);
 
 		// Delete
-		Integer id = trade.getTradeId();
-		tradeRepository.delete(trade);
+		Integer id = trade.getId();
+		iTradeService.delete(trade);
 		Optional<Trade> tradeList = tradeRepository.findById(id);
 		Assert.assertFalse(tradeList.isPresent());
 	}
