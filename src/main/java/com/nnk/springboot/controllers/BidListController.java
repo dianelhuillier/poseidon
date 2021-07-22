@@ -63,11 +63,12 @@ public class BidListController {
 	public String updateBid(@PathVariable("id") Integer id, @Valid BidList bidList,
 			BindingResult result, Model model) {
 		// TODO: check required fields, if valid call service to update Bid and return list Bid
-		if (!result.hasErrors()) {
-			bidList.setRevisionDate(new Timestamp(System.currentTimeMillis()));
+		if (result.hasErrors()) {
 
 			return "bidList/update";
 		}
+		bidList.setRevisionDate(new Timestamp(System.currentTimeMillis()));
+
 		iBidListService.save(bidList);
 //TODO : setupdate
 		model.addAttribute("bidLists", iBidListService.findAllBidList());

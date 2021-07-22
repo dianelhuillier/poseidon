@@ -59,7 +59,7 @@ public class TradeController {
 	public String updateTrade(@PathVariable("id") Integer id, @Valid Trade trade,
 			BindingResult result, Model model) {
 		// TODO: check required fields, if valid call service to update Trade and return Trade list
-		if (!result.hasErrors()) {
+		if (result.hasErrors()) {
 			return "trade/update";
 		}
 		iTradeService.save(trade);

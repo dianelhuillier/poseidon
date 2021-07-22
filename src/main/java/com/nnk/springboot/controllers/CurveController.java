@@ -63,7 +63,7 @@ public class CurveController {
 //		Integer curveId = curvePoint.getCurveId();
 //		double term = curvePoint.getTerm();
 //		double value = curvePoint.getValue();
-		if (!result.hasErrors()) {
+		if (result.hasErrors()) {
 			return "curvePoint/update";
 		}
 		curvePoint.setAsOfDate(new Timestamp(System.currentTimeMillis()));

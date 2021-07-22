@@ -34,17 +34,15 @@ public class Trade {
 	String account;
     @Column(name = "type")
     @Size(max=125)
+    @NotBlank(message = "Type is mandatory")
 	String type;
 	@NotNull(message = "Quantity is mandatory")
 	@Column(name = "buy_quantity")
 	Double buyQuantity;
-	@NotNull(message = "Quantity is mandatory")
 	@Column(name = "sell_quantity")
 	Double sellQuantity;
-	@NotNull(message = "Price is mandatory")
 	@Column(name = "buy_price")
 	Double buyPrice;
-	@NotNull(message = "Price is mandatory")
 	@Column(name = "sell_price")
 	Double sellPrice;
 	@Column(name = "benchmark")

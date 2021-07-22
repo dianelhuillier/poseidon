@@ -56,7 +56,7 @@ public class RuleNameController {
     public String updateRuleName(@PathVariable("id") Integer id, @Valid RuleName ruleName,
                              BindingResult result, Model model) {
         // TODO: check required fields, if valid call service to update RuleName and return RuleName list
-		if (!result.hasErrors()) {
+		if (result.hasErrors()) {
 			return "ruleName/update";
 		}
 		iRuleNameService.save(ruleName);

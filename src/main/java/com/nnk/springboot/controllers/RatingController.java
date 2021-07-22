@@ -56,8 +56,8 @@ public class RatingController {
 	public String updateRating(@PathVariable("id") Integer id, @Valid Rating rating,
 			BindingResult result, Model model) {
 		// TODO: check required fields, if valid call service to update Rating and return Rating list
-		if (!result.hasErrors()) {
-return "rating/update";
+		if (result.hasErrors()) {
+			return "rating/update";
 		}
 		iRatingService.save(rating);
 		model.addAttribute("ratings", iRatingService.findAllRating());
@@ -68,7 +68,7 @@ return "rating/update";
 	public String deleteRating(@PathVariable("id") Integer id, Model model) {
 		// TODO: Find Rating by Id and delete the Rating, return to Rating list
 		Rating rating = iRatingService.findAllRatingById(id).get();
-		
+
 		iRatingService.delete(rating);
 		model.addAttribute("ratings", iRatingService.findAllRating());
 		return "redirect:/rating/list";
