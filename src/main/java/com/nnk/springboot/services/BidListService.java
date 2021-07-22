@@ -42,8 +42,8 @@ public class BidListService implements IBidlListService{
 
 	
 	@Override
-	public void delete(BidList bidList) {
-		bidListRepository.delete(bidList);		
+	public void delete(BidList bid) {
+		bidListRepository.delete(bid);		
 	}
 
 

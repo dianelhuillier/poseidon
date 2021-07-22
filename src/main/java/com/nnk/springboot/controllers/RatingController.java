@@ -24,7 +24,7 @@ public class RatingController {
 	public String home(Model model)
 	{
 		// TODO: find all Rating, add to model
-		model.addAttribute("rating", iRatingService.findAllRating());
+		model.addAttribute("ratings", iRatingService.findAllRating());
 		return "rating/list";
 	}
 
@@ -39,6 +39,7 @@ public class RatingController {
 		if (!result.hasErrors()) {
 			iRatingService.save(rating);
 			model.addAttribute("ratings", iRatingService.findAllRating());
+			return "redirect:/rating/list";
 		}
 		return "rating/add";
 	}
@@ -56,7 +57,7 @@ public class RatingController {
 			BindingResult result, Model model) {
 		// TODO: check required fields, if valid call service to update Rating and return Rating list
 		if (!result.hasErrors()) {
-return "bidList/update";
+return "rating/update";
 		}
 		iRatingService.save(rating);
 		model.addAttribute("ratings", iRatingService.findAllRating());

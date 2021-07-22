@@ -5,7 +5,11 @@ package com.nnk.springboot.domain;
 import javax.annotation.security.DenyAll;
 import javax.persistence.*;
 import javax.validation.constraints.Digits;
+import javax.validation.constraints.FutureOrPresent;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Positive;
+import javax.validation.constraints.Size;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -26,33 +30,67 @@ public class BidList {
     @GeneratedValue(strategy= GenerationType.AUTO)
     @Column(name = "id")
 	Integer id;
+    @Size(max=125)
+    @Column(name = "account")
 	String account;
+    @Size(max=125)
+    @Column(name = "type")
 	String type;
 //	@Digits(fraction = 0, integer = 0)
-	@NotBlank 
+	@NotNull(message = "BidQuantity is mandatory")
+    @Positive(message = "Bid Quantity must be positive")
+	@Column(name = "bid_quantity")
 	Double bidQuantity;
 //	@Digits(fraction = 0, integer = 0)
-	@NotBlank 
+//	@NotNull(message = "AskQuantity is mandatory")
+	
+	@Column(name = "ask_quantity")
 	Double askQuantity;
-//	@Digits(fraction = 0, integer = 0)
-	@NotBlank 
+	@Column(name = "bid")
 	Double bid;
+	@Column(name = "ask")
 	Double ask;
+    @Size(max=125)
+    @Column(name = "benchmark")
 	String benchmark;
 //date ?
+    @Column(name = "bid_list_date")
 	Timestamp bidListDate;
+	@Size(max=125)
+	@Column(name = "commentary")
 	String commentary;
+	@Size(max=125)
+	@Column(name = "security")
 	String security;
+	@Size(max=125)
+	@Column(name = "status")
 	String status;
+	@Size(max=125)
+	@Column(name = "trader")
 	String trader;
+	@Size(max=125)
+	@Column(name = "book")
 	String book;
+	@Size(max=125)
+	@Column(name = "creation_name")
 	String creationName;
+//	@NotNull
+	@Column(name = "creation_date")
 	Timestamp creationDate;
+	@Size(max=125)
+	@Column(name = "revision_name")
 	String revisionName;
+	@Column(name = "revision_date")
 	Timestamp revisionDate;
+	@Size(max=125)
+	@Column(name = "deal_name")
 	String dealName;
+	@Size(max=125)
+	@Column(name = "deal_type")
 	String dealType;
+	@Column(name = "source_list_id")
 	String sourceListId;
+	@Column(name = "side")
 	String side;
 	
 

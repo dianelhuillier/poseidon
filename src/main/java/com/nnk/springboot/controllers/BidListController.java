@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.sql.Timestamp;
 import java.util.Optional;
 
 import javax.validation.Valid;
@@ -29,7 +30,7 @@ public class BidListController {
 	public String home(Model model)
 	{
 		// TODO: call service find all bids to show to the view
-		model.addAttribute("bidList", iBidListService.findAllBidList());
+		model.addAttribute("bidLists", iBidListService.findAllBidList());
 		return "bidList/list";
 	}
 
@@ -42,8 +43,10 @@ public class BidListController {
 	public String validate(@Valid BidList bid, BindingResult result, Model model) {
 		// TODO: check data valid and save to db, after saving return bid list in service
 		if (!result.hasErrors()) {
+			bid.setCreationDate(new Timestamp(System.currentTimeMillis()));
 			iBidListService.save(bid);
 			model.addAttribute("bidLists", iBidListService.findAllBidList());
+			return "redirect:/bidList/list";
 		}
 		return "bidList/add";
 	}
@@ -52,7 +55,6 @@ public class BidListController {
 	public String showUpdateForm(@PathVariable("id") Integer id, Model model) {
 		// TODO: get Bid by Id and to model then show to the form
 		BidList bidList = iBidListService.findBidListById(id).get();
-		//   	bidList.setBidQuantity(null);
 		model.addAttribute("bidList", bidList);
 		return "bidList/update";
 	}
@@ -62,9 +64,12 @@ public class BidListController {
 			BindingResult result, Model model) {
 		// TODO: check required fields, if valid call service to update Bid and return list Bid
 		if (!result.hasErrors()) {
+			bidList.setRevisionDate(new Timestamp(System.currentTimeMillis()));
+
 			return "bidList/update";
 		}
 		iBidListService.save(bidList);
+//TODO : setupdate
 		model.addAttribute("bidLists", iBidListService.findAllBidList());
 		return "redirect:/bidList/list";
 	}
@@ -72,9 +77,9 @@ public class BidListController {
 	@GetMapping("/bidList/delete/{id}")
 	public String deleteBid(@PathVariable("id") Integer id, Model model) {
 		// TODO: Find Bid by Id and delete the bid, return to Bid list
-		BidList bidList = iBidListService.findBidListById(id).get();
+		BidList bid = iBidListService.findBidListById(id).get();
 
-		iBidListService.delete(bidList);
+		iBidListService.delete(bid);
 		model.addAttribute("bidLists", iBidListService.findAllBidList());
 		return "redirect:/bidList/list";
 	}

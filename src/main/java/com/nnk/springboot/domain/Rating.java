@@ -4,6 +4,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 //import java.sql.Timestamp;
+import javax.validation.constraints.Size;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -18,18 +19,21 @@ public class Rating {
     // TODO: Map columns in data table RATING with corresponding java fields
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
+    @Column(name = "id")
 	Integer id;
 	@NotBlank
-	@NotNull
+	@Column(name = "moodys_rating")
+	@Size(max=125)
 	String moodysRating;
-	@NotBlank
-	@NotNull
+	@Column(name = "sandprating")
+	@Size(max=125)
 	String sandPRating;
 	@NotBlank
-	@NotNull
+	@Column(name = "fitch_rating")
+	@Size(max=125)
 	String fitchRating;
-	@NotBlank 
-	@NotNull
+	@NotNull(message = "order Number is mandatory")
+	@Column(name = "order_number")
 	Integer orderNumber;
 
 }

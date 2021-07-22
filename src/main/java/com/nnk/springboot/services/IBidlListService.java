@@ -15,5 +15,5 @@ public interface IBidlListService {
 
 	Optional<BidList> findBidListById(Integer BidListId);
 
-	void delete(BidList bidList);
+	void delete(BidList bid);
 }

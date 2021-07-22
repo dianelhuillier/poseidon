@@ -7,8 +7,11 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import javax.validation.constraints.FutureOrPresent;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Positive;
+
 import java.sql.Timestamp;
 import java.util.Set;
 
@@ -31,18 +34,20 @@ public class CurvePoint {
 	@Id
     @GeneratedValue(strategy= GenerationType.AUTO)
 	Integer id;
-    @NotNull
+    @NotNull(message = "Curve point Id is mandatory")
+    @Positive(message = "Curve point Id must be positive")
+    @Column(name = "curve_id")
 	Integer curveId;
-	@NotNull
-	@NotBlank
+    @Column(name = "as_of_date")
 	Timestamp asOfDate;
-	@Length 
+//	@Length 
+	@NotNull(message = "term is mandatory")
+	@Column(name = "term")
 	Double term;
-	@NotBlank
+	@NotNull(message = "value is mandatory")
+	@Column(name = "value")
 	Double value;
-	@NotNull
-	@NotBlank
+	@Column(name = "creation_date")
 	Timestamp creationDate;
-	
 
 }

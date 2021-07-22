@@ -21,13 +21,19 @@ public class RuleName {
 	Integer id;
 	@NotNull
 	@NotBlank
+	@Column(name = "name")
 	String name;
 	@NotNull
 	@NotBlank
+	@Column(name = "description")
 	String description;
+	@Column(name = "json")
 	String json;
+	@Column(name = "template")
 	String template;
+	@Column(name = "sql_str")
 	String sqlStr;
+	@Column(name = "sql_part")
 	String sqlPart;
 
 }

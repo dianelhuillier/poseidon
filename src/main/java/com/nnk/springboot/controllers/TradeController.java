@@ -42,6 +42,7 @@ public class TradeController {
 			trade.setCreationDate(new Timestamp(System.currentTimeMillis()));
 			iTradeService.save(trade);
 			model.addAttribute("trades", iTradeService.findAllTrade());
+			return "redirect:/trade/list";
 		}
 		return "trade/add";
 	}

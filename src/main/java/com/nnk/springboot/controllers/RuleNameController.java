@@ -24,7 +24,7 @@ public class RuleNameController {
     public String home(Model model)
     {
         // TODO: find all RuleName, add to model
-    	model.addAttribute("rules", iRuleNameService.findAllRuleName());
+    	model.addAttribute("ruleNames", iRuleNameService.findAllRuleName());
         return "ruleName/list";
     }
 
@@ -38,7 +38,8 @@ public class RuleNameController {
         // TODO: check data valid and save to db, after saving return RuleName list
         if (!result.hasErrors()) {
         	iRuleNameService.save(ruleName);
-        	model.addAttribute("rules", iRuleNameService.findAllRuleName());
+        	model.addAttribute("ruleNames", iRuleNameService.findAllRuleName());
+        	return "redirect:/ruleName/list";
         }
     	return "ruleName/add";
     }
@@ -47,7 +48,7 @@ public class RuleNameController {
     public String showUpdateForm(@PathVariable("id") Integer id, Model model) {
         // TODO: get RuleName by Id and to model then show to the form
     	RuleName ruleName = iRuleNameService.findRuleById(id).get();
-    	model.addAttribute("rule", ruleName);
+    	model.addAttribute("ruleName", ruleName);
         return "ruleName/update";
     }
 
@@ -59,7 +60,7 @@ public class RuleNameController {
 			return "ruleName/update";
 		}
 		iRuleNameService.save(ruleName);
-		model.addAttribute("rules", iRuleNameService.findAllRuleName());
+		model.addAttribute("ruleNames", iRuleNameService.findAllRuleName());
     	return "redirect:/ruleName/list";
     }
 
@@ -69,7 +70,7 @@ public class RuleNameController {
     	RuleName ruleName = iRuleNameService.findRuleById(id).get();
     	
     	iRuleNameService.delete(ruleName);
-    	model.addAttribute("rules", iRuleNameService.findAllRuleName());
+    	model.addAttribute("ruleNames", iRuleNameService.findAllRuleName());
     	return "redirect:/ruleName/list";
     }
 }
