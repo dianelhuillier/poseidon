@@ -1,6 +1,7 @@
 package com.nnk.springboot.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -28,6 +29,18 @@ public class RuleNameService implements IRuleNameService{
 	public List<RuleName> findAllRuleName() {
 		// TODO Auto-generated method stub
 		return ruleNameRepository.findAll();
+	}
+
+	@Override
+	public Optional<RuleName> findRuleById(Integer id) {
+		// TODO Auto-generated method stub
+		return ruleNameRepository.findRuleById(id);
+	}
+
+	@Override
+	public void delete(RuleName ruleName) {
+		// TODO Auto-generated method stub
+		ruleNameRepository.delete(ruleName);
 	}
 
 }

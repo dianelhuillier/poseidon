@@ -14,5 +14,9 @@ public interface ICurvePointService {
 
 	CurvePoint save(@Valid CurvePoint curvePoint);
 
+	Optional<CurvePoint> findCurveById(Integer id);
+
+	void delete(CurvePoint curvePoint);
+
 
 }

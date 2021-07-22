@@ -50,7 +50,7 @@ public class TradeTests {
 		// Delete
 		Integer id = trade.getId();
 		iTradeService.delete(trade);
-		Optional<Trade> tradeList = tradeRepository.findById(id);
+		Optional<Trade> tradeList = iTradeService.findTradeById(id);
 		Assert.assertFalse(tradeList.isPresent());
 	}
 }

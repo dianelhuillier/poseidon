@@ -13,7 +13,7 @@ public interface IBidlListService {
 
 	BidList save(@Valid BidList bid);
 
-	BidList findBidListById(Integer BidListId);
+	Optional<BidList> findBidListById(Integer BidListId);
 
 	void delete(BidList bidList);
 }

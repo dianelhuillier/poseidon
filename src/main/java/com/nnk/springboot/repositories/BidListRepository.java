@@ -11,7 +11,7 @@ import org.springframework.stereotype.Repository;
 public interface BidListRepository extends JpaRepository<BidList, Integer> {
 
 
-	BidList findBidListById(Integer BidListId);
+	Optional<BidList> findBidListById(Integer BidListId);
 
 
 }

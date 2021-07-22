@@ -38,7 +38,7 @@ public class TradeService implements ITradeService{
 	}
 
 	@Override
-	public Trade findTradeById(Integer id) {
+	public Optional<Trade> findTradeById(Integer id) {
 		// TODO Auto-generated method stub
 		return tradeRepository.findTradeById(id);
 	}

@@ -1,6 +1,7 @@
 package com.nnk.springboot.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import javax.validation.Valid;
 
@@ -33,6 +34,21 @@ public class CurvePointService implements ICurvePointService{
 	public CurvePoint save(@Valid CurvePoint curvePoint) {
 		// TODO Auto-generated method stub
 		return curvePointRepository.save(curvePoint);
+	}
+
+
+	@Override
+	public Optional<CurvePoint> findCurveById(Integer id) {
+		// TODO Auto-generated method stub
+		return curvePointRepository.findById(id)
+				;
+	}
+
+
+	@Override
+	public void delete(CurvePoint curvePoint) {
+		// TODO Auto-generated method stub
+		curvePointRepository.delete(curvePoint);
 	}
 
 

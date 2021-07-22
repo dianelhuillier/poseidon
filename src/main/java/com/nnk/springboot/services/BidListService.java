@@ -35,7 +35,7 @@ public class BidListService implements IBidlListService{
 
 
 	@Override
-	public BidList findBidListById(Integer id) {
+	public Optional<BidList> findBidListById(Integer id) {
 		return bidListRepository.findBidListById(id);
 	}
 

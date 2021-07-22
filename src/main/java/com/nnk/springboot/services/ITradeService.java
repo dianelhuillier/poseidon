@@ -14,7 +14,7 @@ public interface ITradeService {
 
 	void delete(Trade trade);
 
-	Trade findTradeById(Integer id);
+	Optional<Trade> findTradeById(Integer id);
 
 
 }

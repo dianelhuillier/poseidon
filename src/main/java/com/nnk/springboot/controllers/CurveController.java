@@ -46,6 +46,8 @@ ICurvePointService iCurvePointService;
     @GetMapping("/curvePoint/update/{id}")
     public String showUpdateForm(@PathVariable("id") Integer id, Model model) {
         // TODO: get CurvePoint by Id and to model then show to the form
+    	CurvePoint curvePoint = iCurvePointService.findCurveById(id).get();
+    	model.addAttribute("curvePoint", curvePoint);
         return "curvePoint/update";
     }
 
@@ -53,12 +55,20 @@ ICurvePointService iCurvePointService;
     public String updateBid(@PathVariable("id") Integer id, @Valid CurvePoint curvePoint,
                              BindingResult result, Model model) {
         // TODO: check required fields, if valid call service to update Curve and return Curve list
-        return "redirect:/curvePoint/list";
+		if (!result.hasErrors()) {
+			return "curvePoint/list";
+		}
+		iCurvePointService.save(curvePoint);
+		model.addAttribute("curvePoints", iCurvePointService.findAllCurvePoint());
+    	return "redirect:/curvePoint/list";
     }
 
     @GetMapping("/curvePoint/delete/{id}")
     public String deleteBid(@PathVariable("id") Integer id, Model model) {
         // TODO: Find Curve by Id and delete the Curve, return to Curve list
+    	CurvePoint curvePoint = iCurvePointService.findCurveById(id).get();
+    	iCurvePointService.delete(curvePoint);
+    	model.addAttribute("curvePoints", iCurvePointService.findAllCurvePoint());
         return "redirect:/curvePoint/list";
     }
 }

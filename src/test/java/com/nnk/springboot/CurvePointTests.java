@@ -53,7 +53,7 @@ public class CurvePointTests {
 		// Delete
 		Integer id = curvePoint.getId();
 		curvePointRepository.delete(curvePoint);
-		Optional<CurvePoint> curvePointList = curvePointRepository.findById(id);
+		Optional<CurvePoint> curvePointList = iCurvePointService.findCurveById(id);
 		Assert.assertFalse(curvePointList.isPresent());
 	}
 

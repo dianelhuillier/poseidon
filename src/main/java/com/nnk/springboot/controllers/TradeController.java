@@ -49,7 +49,7 @@ public class TradeController {
 	@GetMapping("/trade/update/{id}")
 	public String showUpdateForm(@PathVariable("id") Integer id, Model model) {
 		// TODO: get Trade by Id and to model then show to the form
-		Trade trade  = iTradeService.findTradeById(id);
+		Trade trade  = iTradeService.findTradeById(id).get();
 		model.addAttribute("trade", trade);
 		return "trade/update";
 	}
@@ -69,7 +69,7 @@ public class TradeController {
 	@GetMapping("/trade/delete/{id}")
 	public String deleteTrade(@PathVariable("id") Integer id, Model model) {
 		// TODO: Find Trade by Id and delete the Trade, return to Trade list
-		Trade trade = iTradeService.findTradeById(id);
+		Trade trade = iTradeService.findTradeById(id).get();
 
 		iTradeService.delete(trade);
 		model.addAttribute("trades", iTradeService.findAllTrade());

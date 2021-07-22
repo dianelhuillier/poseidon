@@ -51,7 +51,7 @@ public class BidListController {
 	@GetMapping("/bidList/update/{id}")
 	public String showUpdateForm(@PathVariable("id") Integer id, Model model) {
 		// TODO: get Bid by Id and to model then show to the form
-		BidList bidList = iBidListService.findBidListById(id);
+		BidList bidList = iBidListService.findBidListById(id).get();
 		//   	bidList.setBidQuantity(null);
 		model.addAttribute("bidList", bidList);
 		return "bidList/update";
@@ -72,7 +72,7 @@ public class BidListController {
 	@GetMapping("/bidList/delete/{id}")
 	public String deleteBid(@PathVariable("id") Integer id, Model model) {
 		// TODO: Find Bid by Id and delete the bid, return to Bid list
-		BidList bidList = iBidListService.findBidListById(id);
+		BidList bidList = iBidListService.findBidListById(id).get();
 
 		iBidListService.delete(bidList);
 		model.addAttribute("bidLists", iBidListService.findAllBidList());
