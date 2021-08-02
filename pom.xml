@@ -22,14 +22,23 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
 		<java.version>1.8</java.version>
 	</properties>
+
 
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+			<exclusions>
+				<exclusion>
+					<groupId>org.junit.vintage</groupId>
+					<artifactId>junit-vintage-engine</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -60,39 +69,132 @@
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
 		</dependency>
-		
+
 		<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
-<dependency>
-    <groupId>org.projectlombok</groupId>
-    <artifactId>lombok</artifactId>
-    <version>1.18.20</version>
-    <scope>provided</scope>
-</dependency>
-		
-		
-<!-- 08/07 vs Invocation of init method failed; nested exception is java.lang.NoClassDefFoundError: javax/xml/bind/JAXBException; Using generated security password: 6dd7f243-8763-4f22-b647-f7916dbd1d1e -->		
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.20</version>
+			<scope>provided</scope>
+		</dependency>
+
+
+		<!-- 08/07 vs Invocation of init method failed; nested exception is java.lang.NoClassDefFoundError: 
+			javax/xml/bind/JAXBException; Using generated security password: 6dd7f243-8763-4f22-b647-f7916dbd1d1e -->
 		<!-- API, java.xml.bind module -->
+		<dependency>
+			<groupId>jakarta.xml.bind</groupId>
+			<artifactId>jakarta.xml.bind-api</artifactId>
+			<version>2.3.2</version>
+		</dependency>
+
+		<!-- Runtime, com.sun.xml.bind module -->
+		<dependency>
+			<groupId>org.glassfish.jaxb</groupId>
+			<artifactId>jaxb-runtime</artifactId>
+			<version>2.3.2</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.javassist/javassist -->
+		<dependency>
+			<groupId>org.javassist</groupId>
+			<artifactId>javassist</artifactId>
+			<version>3.28.0-GA</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.passay/passay -->
+		<dependency>
+			<groupId>org.passay</groupId>
+			<artifactId>passay</artifactId>
+			<version>1.6.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-api</artifactId>
+			<version>2.14.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.mockito/mockito-core -->
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-core</artifactId>
+			<version>3.11.2</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.mockito/mockito-junit-jupiter -->
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-junit-jupiter</artifactId>
+			<version>3.11.2</version>
+			<scope>test</scope>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.mockito/mockito-all -->
 <dependency>
-    <groupId>jakarta.xml.bind</groupId>
-    <artifactId>jakarta.xml.bind-api</artifactId>
-    <version>2.3.2</version>
+    <groupId>org.mockito</groupId>
+    <artifactId>mockito-all</artifactId>
+    <version>1.10.19</version>
+    <scope>test</scope>
 </dependency>
+		
+		<!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-test -->
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-test</artifactId>
+			<version>5.4.7</version>
+			<scope>test</scope>
+		</dependency>
 
-<!-- Runtime, com.sun.xml.bind module -->
+		<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-webflux -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-webflux</artifactId>
+			<version>2.5.2</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.jacoco/jacoco-maven-plugin -->
+		<dependency>
+			<groupId>org.jacoco</groupId>
+			<artifactId>jacoco-maven-plugin</artifactId>
+			<version>0.8.5</version>
+			<type>maven-plugin</type>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-assembly-plugin</artifactId>
+			<version>3.0.0</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-compiler-plugin -->
+		<dependency>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-compiler-plugin</artifactId>
+			<version>3.8.1</version>
+
+		</dependency>
+
+
+<!-- https://mvnrepository.com/artifact/net.sourceforge.htmlunit/htmlunit -->
 <dependency>
-    <groupId>org.glassfish.jaxb</groupId>
-    <artifactId>jaxb-runtime</artifactId>
-    <version>2.3.2</version>
+    <groupId>net.sourceforge.htmlunit</groupId>
+    <artifactId>htmlunit</artifactId>
+    <version>2.50.0</version>
 </dependency>
-<!-- https://mvnrepository.com/artifact/org.javassist/javassist -->
+<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-htmlunit-driver -->
 <dependency>
-    <groupId>org.javassist</groupId>
-    <artifactId>javassist</artifactId>
-    <version>3.28.0-GA</version>
+    <groupId>org.seleniumhq.selenium</groupId>
+    <artifactId>selenium-htmlunit-driver</artifactId>
+    <version>2.52.0</version>
 </dependency>
-
-
-
+<!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-data -->
+<dependency>
+    <groupId>org.springframework.security</groupId>
+    <artifactId>spring-security-data</artifactId>
+    <version>5.5.1</version>
+</dependency>
 
 	</dependencies>
 
@@ -102,7 +204,157 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+
+
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+
+
+
+<!-- 			<plugin> -->
+<!-- 				<groupId>org.jacoco</groupId> -->
+<!-- 				<artifactId>jacoco-maven-plugin</artifactId> -->
+<!-- 				<version>0.8.5</version> -->
+<!-- 				<executions> -->
+<!-- 					<execution> -->
+<!-- 						<goals> -->
+<!-- 							<goal>prepare-agent</goal> -->
+<!-- 						</goals> -->
+<!-- 					</execution> -->
+<!-- 					<execution> -->
+<!-- 						<id>jacoco-report</id> -->
+<!-- 						<phase>test</phase> -->
+<!-- 						<goals> -->
+<!-- 							<goal>report</goal> -->
+<!-- 						</goals> -->
+<!-- 					</execution> -->
+<!-- 				</executions> -->
+<!-- 			</plugin> -->
+
+
+			<plugin>
+				<!-- The Failsafe Plugin is designed to run integration tests while the 
+					Surefire Plugin is designed to run unit tests. -->
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-failsafe-plugin</artifactId>
+				<version>2.19.1</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>integration-test</goal>
+							<goal>verify</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+
 		</plugins>
 	</build>
+
+	<reporting>
+		<plugins>
+			<plugin>
+				<!-- The JXR Plugin generates a cross-reference of the project's sources. -->
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jxr-plugin</artifactId>
+				<version>2.5</version>
+			</plugin>
+			<plugin>
+				<!-- The Javadoc Plugin generates javadocs using the Javadoc tool. -->
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>2.10.3</version>
+				<configuration>
+					<additionalparam>-Xdoclint:none</additionalparam>
+				</configuration>
+			</plugin>
+			<plugin>
+				<!-- The Surefire Report Plugin generates reports for unit and integration 
+					tests. -->
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-report-plugin</artifactId>
+				<version>2.19.1</version>
+			</plugin>
+			<plugin>
+				<!-- The Checkstyle Plugin generates a report regarding the code style 
+					used by the developers. -->
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-checkstyle-plugin</artifactId>
+				<version>2.17</version>
+			</plugin>
+			<plugin>
+				<!-- The PMD plugin generates PMD and CPD reports using the PMD code 
+					analysis tool. -->
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-pmd-plugin</artifactId>
+				<version>3.6</version>
+				<configuration>
+					<skipEmptyReport>false</skipEmptyReport>
+					<linkXref>true</linkXref>
+					<minimumTokens>50</minimumTokens>
+					<rulesets>
+						<ruleset>rulesets/java/android.xml</ruleset>
+						<ruleset>rulesets/java/basic.xml</ruleset>
+						<ruleset>rulesets/java/braces.xml</ruleset>
+						<ruleset>rulesets/java/clone.xml</ruleset>
+						<ruleset>rulesets/java/codesize.xml</ruleset>
+						<ruleset>rulesets/java/comments.xml</ruleset>
+						<!-- <ruleset>rulesets/java/controversial.xml</ruleset> -->
+						<ruleset>rulesets/java/coupling.xml</ruleset>
+						<ruleset>rulesets/java/design.xml</ruleset>
+						<ruleset>rulesets/java/empty.xml</ruleset>
+						<ruleset>rulesets/java/finalizers.xml</ruleset>
+						<ruleset>rulesets/java/imports.xml</ruleset>
+						<ruleset>rulesets/java/j2ee.xml</ruleset>
+						<ruleset>rulesets/java/javabeans.xml</ruleset>
+						<ruleset>rulesets/java/junit.xml</ruleset>
+						<ruleset>rulesets/java/logging-jakarta-commons.xml</ruleset>
+						<ruleset>rulesets/java/logging-java.xml</ruleset>
+						<ruleset>rulesets/java/migrating.xml</ruleset>
+						<ruleset>rulesets/java/migrating_to_13.xml</ruleset>
+						<ruleset>rulesets/java/migrating_to_14.xml</ruleset>
+						<ruleset>rulesets/java/migrating_to_15.xml</ruleset>
+						<ruleset>rulesets/java/migrating_to_junit4.xml</ruleset>
+						<ruleset>rulesets/java/naming.xml</ruleset>
+						<ruleset>rulesets/java/optimizations.xml</ruleset>
+						<ruleset>rulesets/java/strictexception.xml</ruleset>
+						<ruleset>rulesets/java/strings.xml</ruleset>
+						<ruleset>rulesets/java/sunsecure.xml</ruleset>
+						<ruleset>rulesets/java/typeresolution.xml</ruleset>
+						<ruleset>rulesets/java/unnecessary.xml</ruleset>
+						<ruleset>rulesets/java/unusedcode.xml</ruleset>
+					</rulesets>
+				</configuration>
+			</plugin>
+			<plugin>
+				<!-- FindBugs Plugin looks for bugs in Java programs. It is based on 
+					the concept of bug patterns. -->
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>findbugs-maven-plugin</artifactId>
+				<version>3.0.4</version>
+			</plugin>
+
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-site-plugin</artifactId>
+				<version>3.7.1</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-project-info-reports-plugin</artifactId>
+				<version>2.9</version>
+			</plugin>
+		</plugins>
+	</reporting>
+
 
 </project>

@@ -7,7 +7,7 @@ import javax.validation.Valid;
 
 import com.nnk.springboot.domain.BidList;
 
-public interface IBidlListService {
+public interface IBidListService {
 
 	List<BidList> findAllBidList();
 

@@ -1,8 +1,8 @@
-package com.nnk.springboot;
+package com.nnk.springboot.tests.services;
 
 import com.nnk.springboot.domain.BidList;
 import com.nnk.springboot.repositories.BidListRepository;
-import com.nnk.springboot.services.IBidlListService;
+import com.nnk.springboot.services.IBidListService;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -23,7 +23,7 @@ public class BidTests {
 	@Autowired
 	private BidListRepository bidListRepository;
 	@Autowired
-	IBidlListService iBidlListService;
+	IBidListService iBidlListService;
 
 	@Test
 	@Transactional

@@ -10,6 +10,7 @@ import com.nnk.springboot.domain.RuleName;
 import com.nnk.springboot.repositories.RuleNameRepository;
 
 @Service
+
 public class RuleNameService implements IRuleNameService{
 
 	private RuleNameRepository ruleNameRepository;

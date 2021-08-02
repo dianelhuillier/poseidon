@@ -1,4 +1,4 @@
-package com.nnk.springboot;
+package com.nnk.springboot.tests.services;
 
 import com.nnk.springboot.domain.CurvePoint;
 import com.nnk.springboot.repositories.CurvePointRepository;

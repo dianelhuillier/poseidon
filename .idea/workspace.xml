@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="87342208-09f6-4f96-9728-4426e27ceafe" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.classpath" beforeDir="false" afterPath="$PROJECT_DIR$/.classpath" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-boot-skeleton.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nnk/springboot/WebSecurity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nnk/springboot/WebSecurity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nnk/springboot/controllers/BidListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nnk/springboot/controllers/BidListController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nnk/springboot/controllers/CurveController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nnk/springboot/controllers/CurveController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nnk/springboot/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nnk/springboot/controllers/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nnk/springboot/domain/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nnk/springboot/domain/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nnk/springboot/services/BidListService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nnk/springboot/services/BidListService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nnk/springboot/services/IBidlListService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nnk/springboot/services/IBidListService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nnk/springboot/services/IRuleNameService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nnk/springboot/services/IRuleNameService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nnk/springboot/services/RuleNameService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nnk/springboot/services/RuleNameService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/nnk/springboot/BidTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/nnk/springboot/tests/services/BidTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/nnk/springboot/CurvePointTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/nnk/springboot/tests/services/CurvePointTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/nnk/springboot/PasswordEncodeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/nnk/springboot/tests/services/PasswordEncodeTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/nnk/springboot/RatingTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/nnk/springboot/tests/services/RatingTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/nnk/springboot/RuleTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/nnk/springboot/tests/services/RuleTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/nnk/springboot/TradeTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/nnk/springboot/tests/services/TradeTests.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1wBBYb0EWNGSCJXkyDga6CDc2PW" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="spring-boot-skeleton" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.nnk.springboot.Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="87342208-09f6-4f96-9728-4426e27ceafe" name="Changes" comment="" />
+      <created>1627922154729</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1627922154729</updated>
+      <workItem from="1627922156671" duration="245000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

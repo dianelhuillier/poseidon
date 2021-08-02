@@ -12,7 +12,7 @@ import com.nnk.springboot.domain.BidList;
 import com.nnk.springboot.repositories.BidListRepository;
 
 @Service
-public class BidListService implements IBidlListService{
+public class BidListService implements IBidListService{
 
 	private BidListRepository bidListRepository;
 
