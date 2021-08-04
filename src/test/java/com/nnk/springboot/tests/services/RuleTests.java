@@ -11,6 +11,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.List;
 import java.util.Optional;
 
@@ -47,4 +51,5 @@ public class RuleTests {
 		Optional<RuleName> ruleList = iRuleNameService.findRuleById(id);
 		Assert.assertFalse(ruleList.isPresent());
 	}
+
 }

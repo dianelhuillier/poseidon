@@ -1,0 +1,1 @@
+memberSearchIndex = [{"p":"com.nkk.springboot.tests.controllers","c":"RuleNameControllerTest","l":"RuleNameControllerTest()","u":"%3Cinit%3E()"},{"p":"com.nkk.springboot.tests.controllers","c":"RuleNameControllerTest","l":"test_application()"}];updateSearchResults();

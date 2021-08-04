@@ -6,6 +6,7 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import com.nnk.springboot.repositories.UserRepository;
 //import org.springframework.security.oauth2.client.registration.ClientRegistrationRepository;
 import com.nnk.springboot.services.IBidListService;
+import com.nnk.springboot.services.IRuleNameService;
 
 
 //Configuration classes annotated with @TestConfiguration are excluded from component scanning, therefore we need to import it
@@ -27,7 +28,8 @@ public class SpringWebIntegrationTestConfig {
 	
 //	@MockBean
 //	private IBidListService iBidListService;
-
+@MockBean
+private IRuleNameService iRuleNameService;
 //
 //}
 }

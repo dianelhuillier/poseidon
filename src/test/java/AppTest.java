@@ -1,19 +1,12 @@
-
-
-
-import org.junit.jupiter.api.Test;
+//import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import com.nnk.springboot.Application;
-
 @SpringBootTest
-public class AppTest {
-    @Test
-    void contextLoads() {}
+class PoseidonApplicationTests {
 
-//    @Test
-//    public void main() {
-//        Application.main(new String[] {});
-//    }
+	@Test
+	void contextLoads() {
+	}
+
 }
-

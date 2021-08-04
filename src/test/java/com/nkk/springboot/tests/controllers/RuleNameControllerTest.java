@@ -1,6 +1,5 @@
 package com.nkk.springboot.tests.controllers;
 
-import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.ContextConfiguration;
@@ -14,8 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThat;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.fail;
+//import static org.junit.jupiter.api.Assertions.assertEquals;
+//import static org.junit.jupiter.api.Assertions.fail;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.verify;
@@ -37,8 +36,9 @@ import java.util.stream.Collectors;
 
 import org.junit.Assert;
 import org.junit.Before;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+//import org.junit.jupiter.api.BeforeEach;
+//import org.junit.jupiter.api.DisplayName;
 import org.junit.runner.RunWith;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Mock;
@@ -66,8 +66,8 @@ import com.nnk.springboot.services.RuleNameService;
 
 import lombok.Getter;
 
-import com.nnk.springboot.config.AuthenticationMock;
-import com.nnk.springboot.config.AuthenticationMock.WithUserAuth;
+//import com.nnk.springboot.config.AuthenticationMock;
+//import com.nnk.springboot.config.AuthenticationMock.WithUserAuth;
 import com.nnk.springboot.config.SpringWebUnitTestConfig;
 //import com.nnk.springboot.testconfig.OAuthUtils;
 import com.nnk.springboot.controllers.BidListController;
@@ -142,7 +142,7 @@ public class RuleNameControllerTest {
 //		try {
 //		User user = new User ();
 			try {
-				URL url = new URL("http://localhost:8080/ruleName/list");
+				URL url = new URL("http://localhost:8080/ruleName/li");
 				HttpURLConnection huc = (HttpURLConnection) url.openConnection();
 				 
 				int responseCode = huc.getResponseCode();

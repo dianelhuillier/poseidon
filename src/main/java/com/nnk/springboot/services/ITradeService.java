@@ -17,4 +17,5 @@ public interface ITradeService {
 	Optional<Trade> findTradeById(Integer id);
 
 
+
 }

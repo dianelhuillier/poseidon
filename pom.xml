@@ -119,27 +119,27 @@
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/org.mockito/mockito-core -->
-		<dependency>
-			<groupId>org.mockito</groupId>
-			<artifactId>mockito-core</artifactId>
-			<version>3.11.2</version>
-			<scope>test</scope>
-		</dependency>
+<!-- 		<dependency> -->
+<!-- 			<groupId>org.mockito</groupId> -->
+<!-- 			<artifactId>mockito-core</artifactId> -->
+<!-- 			<version>3.11.2</version> -->
+<!-- 			<scope>test</scope> -->
+<!-- 		</dependency> -->
 
 		<!-- https://mvnrepository.com/artifact/org.mockito/mockito-junit-jupiter -->
-		<dependency>
-			<groupId>org.mockito</groupId>
-			<artifactId>mockito-junit-jupiter</artifactId>
-			<version>3.11.2</version>
-			<scope>test</scope>
-		</dependency>
+<!-- 		<dependency> -->
+<!-- 			<groupId>org.mockito</groupId> -->
+<!-- 			<artifactId>mockito-junit-jupiter</artifactId> -->
+<!-- 			<version>3.11.2</version> -->
+<!-- 			<scope>test</scope> -->
+<!-- 		</dependency> -->
 		<!-- https://mvnrepository.com/artifact/org.mockito/mockito-all -->
-<dependency>
-    <groupId>org.mockito</groupId>
-    <artifactId>mockito-all</artifactId>
-    <version>1.10.19</version>
-    <scope>test</scope>
-</dependency>
+<!-- <dependency> -->
+<!--     <groupId>org.mockito</groupId> -->
+<!--     <artifactId>mockito-all</artifactId> -->
+<!--     <version>1.10.19</version> -->
+<!--     <scope>test</scope> -->
+<!-- </dependency> -->
 		
 		<!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-test -->
 		<dependency>
@@ -195,6 +195,32 @@
     <artifactId>spring-security-data</artifactId>
     <version>5.5.1</version>
 </dependency>
+
+<dependency>
+	<groupId>org.junit.jupiter</groupId>
+	<artifactId>junit-jupiter-api</artifactId>
+	<scope>test</scope>
+</dependency>
+<dependency>
+	<groupId>org.junit.jupiter</groupId>
+	<artifactId>junit-jupiter-engine</artifactId>
+	<scope>test</scope>
+</dependency>
+<!-- https://mvnrepository.com/artifact/org.junit.platform/junit-platform-launcher -->
+<dependency>
+    <groupId>org.junit.platform</groupId>
+    <artifactId>junit-platform-launcher</artifactId>
+    <version>1.7.0</version>
+    <scope>test</scope>
+</dependency>
+
+<dependency>
+	<groupId>org.mockito</groupId>
+	<artifactId>mockito-junit-jupiter</artifactId>
+<version>3.11.2</version> 
+	<scope>test</scope>
+</dependency>
+
 
 	</dependencies>
 
