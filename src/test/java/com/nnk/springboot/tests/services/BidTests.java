@@ -20,8 +20,7 @@ import javax.transaction.Transactional;
 @SpringBootTest(properties = {"spring.jpa.properties.javax.persistence.validation.mode=none"})
 public class BidTests {
 
-	@Autowired
-	private BidListRepository bidListRepository;
+
 	@Autowired
 	IBidListService iBidlListService;
 

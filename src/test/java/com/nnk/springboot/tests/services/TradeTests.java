@@ -21,8 +21,7 @@ import javax.transaction.Transactional;
 @SpringBootTest(properties = {"spring.jpa.properties.javax.persistence.validation.mode=none"})
 public class TradeTests {
 
-	@Autowired
-	private TradeRepository tradeRepository;
+
 	@Autowired
 	ITradeService iTradeService;
 

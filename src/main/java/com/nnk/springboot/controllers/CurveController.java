@@ -15,23 +15,28 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.sql.Timestamp;
 
 import javax.validation.Valid;
-
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 @Controller
 public class CurveController {
 	// TODO: Inject Curve Point service
 	@Autowired
 	ICurvePointService iCurvePointService;
 
+	private static final Logger logger = LogManager.getLogger("Poseidon");
+
 	@RequestMapping("/curvePoint/list")
 	public String home(Model model)
 	{
 		// TODO: find all Curve Point, add to model
 		model.addAttribute("curvePoints", iCurvePointService.findAllCurvePoint());
+		logger.info("/curvePoint/list OK");
 		return "curvePoint/list";
 	}
 
 	@GetMapping("/curvePoint/add")
 	public String addCurveForm(CurvePoint bid) {
+		logger.info("GET /curvePoint/add OK");
 		return "curvePoint/add";
 	}
 
@@ -43,8 +48,10 @@ public class CurveController {
 			curvePoint.setCreationDate(new Timestamp(System.currentTimeMillis()));
 			iCurvePointService.save(curvePoint);
 			model.addAttribute("curvePoints", iCurvePointService.findAllCurvePoint());
+			logger.info("POST /curvePoint/validate OK");
 			return "redirect:/curvePoint/list";
 		}
+		logger.error("POST /curvePoint/validate has errors");
 		return "curvePoint/add";
 	}
 
@@ -53,6 +60,7 @@ public class CurveController {
 		// TODO: get CurvePoint by Id and to model then show to the form
 		CurvePoint curvePoint = iCurvePointService.findCurveById(id).get();
 		model.addAttribute("curvePoint", curvePoint);
+		logger.info("GET /curvePoint/update/Id OK");
 		return "curvePoint/update";
 	}
 
@@ -64,12 +72,14 @@ public class CurveController {
 //		double term = curvePoint.getTerm();
 //		double value = curvePoint.getValue();
 		if (result.hasErrors()) {
+			logger.error("POST /curvePoint/update/id has errors");
 			return "curvePoint/update";
 		}
 		curvePoint.setAsOfDate(new Timestamp(System.currentTimeMillis()));
 
 		iCurvePointService.save(curvePoint);
 		model.addAttribute("curvePoints", iCurvePointService.findAllCurvePoint());
+		logger.info("POST /curvePoint/update/id OK");
 		return "redirect:/curvePoint/list";
 	}
 
@@ -79,6 +89,7 @@ public class CurveController {
 		CurvePoint curvePoint = iCurvePointService.findCurveById(id).get();
 		iCurvePointService.delete(curvePoint);
 		model.addAttribute("curvePoints", iCurvePointService.findAllCurvePoint());
+		logger.info("GET /curvePoint/delete/id has error");
 		return "redirect:/curvePoint/list";
 	}
 }

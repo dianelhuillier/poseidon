@@ -36,6 +36,7 @@ public class CurvePointTests {
 	public void curvePointTest() {
 		CurvePoint curvePoint = new CurvePoint(10, 10, null, 10d, 30d, null);
 		curvePoint.setAsOfDate(new Timestamp(System.currentTimeMillis()));
+		curvePoint.setCreationDate(new Timestamp(System.currentTimeMillis()));
 		// Save
 		curvePoint = iCurvePointService.save(curvePoint);
 		Assert.assertNotNull(curvePoint.getId());
