@@ -36,24 +36,22 @@ public class BidList {
     @Size(max=125)
     @Column(name = "type")
 	String type;
-//	@Digits(fraction = 0, integer = 0)
 	@NotNull(message = "BidQuantity is mandatory")
     @Positive(message = "Bid Quantity must be positive")
 	@Column(name = "bid_quantity")
 	Double bidQuantity;
-//	@Digits(fraction = 0, integer = 0)
-//	@NotNull(message = "AskQuantity is mandatory")
-	
+    @Positive(message = "Ask Quantity must be positive")
 	@Column(name = "ask_quantity")
 	Double askQuantity;
+    @Positive(message = "Bid  must be positive")
 	@Column(name = "bid")
 	Double bid;
 	@Column(name = "ask")
+    @Positive(message = "Ask must be positive")
 	Double ask;
     @Size(max=125)
     @Column(name = "benchmark")
 	String benchmark;
-//date ?
     @Column(name = "bid_list_date")
 	Timestamp bidListDate;
 	@Size(max=125)
@@ -74,7 +72,6 @@ public class BidList {
 	@Size(max=125)
 	@Column(name = "creation_name")
 	String creationName;
-//	@NotNull
 	@Column(name = "creation_date")
 	Timestamp creationDate;
 	@Size(max=125)

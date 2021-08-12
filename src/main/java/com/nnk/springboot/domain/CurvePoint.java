@@ -23,13 +23,7 @@ import java.util.Set;
 @Data
 public class CurvePoint {
     // TODO: Map columns in data table CURVEPOINT with corresponding java fields
- 
-	/*
-	 * @ManyToMany(cascade = CascadeType.ALL)
-	 * 
-	 * @JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"),
-	 * inverseJoinColumns = @JoinColumn(name = "role_id")) private Set<Role> roles;
-	 */
+
 	
 	@Id
     @GeneratedValue(strategy= GenerationType.AUTO)
@@ -40,7 +34,6 @@ public class CurvePoint {
 	Integer curveId;
     @Column(name = "as_of_date")
 	Timestamp asOfDate;
-//	@Length 
 	@NotNull(message = "term is mandatory")
 	@Column(name = "term")
 	Double term;

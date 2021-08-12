@@ -43,7 +43,7 @@ public class RuleTests {
 
 		// Delete
 		Integer id = rule.getId();
-		ruleNameRepository.delete(rule);
+		iRuleNameService.delete(rule);
 		Optional<RuleName> ruleList = iRuleNameService.findRuleById(id);
 		Assert.assertFalse(ruleList.isPresent());
 	}

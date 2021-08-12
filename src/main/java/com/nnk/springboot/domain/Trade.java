@@ -6,6 +6,7 @@ import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.FutureOrPresent;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Positive;
 import javax.validation.constraints.Size;
 
 import org.springframework.format.annotation.DateTimeFormat;
@@ -38,16 +39,19 @@ public class Trade {
 	String type;
 	@NotNull(message = "Quantity is mandatory")
 	@Column(name = "buy_quantity")
+    @Positive(message = "Buy Quantity must be positive")
 	Double buyQuantity;
 	@Column(name = "sell_quantity")
+    @Positive(message = "Sell Quantity must be positive")
 	Double sellQuantity;
 	@Column(name = "buy_price")
+    @Positive(message = "Buy price must be positive")
 	Double buyPrice;
 	@Column(name = "sell_price")
+    @Positive(message = "Sell price must be positive")
 	Double sellPrice;
 	@Column(name = "benchmark")
 	String benchmark;
-//    @FutureOrPresent(message = "The date should be a date in the future or now")
     @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm")
     @Column(name = "trade_date")
     Timestamp tradeDate;

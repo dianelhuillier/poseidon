@@ -20,8 +20,7 @@ import javax.transaction.Transactional;
 @SpringBootTest(properties = {"spring.jpa.properties.javax.persistence.validation.mode=none"})
 public class RatingTests {
 
-	@Autowired
-	private RatingRepository ratingRepository;
+
 	@Autowired
 	IRatingService iRatingService;
 
@@ -46,7 +45,7 @@ public class RatingTests {
 
 		// Delete
 		Integer id = rating.getId();
-		ratingRepository.delete(rating);
+		iRatingService.delete(rating);
 		Optional<Rating> ratingList = iRatingService.findAllRatingById(id);
 		Assert.assertFalse(ratingList.isPresent());
 	}

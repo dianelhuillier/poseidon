@@ -68,9 +68,6 @@ public class CurveController {
 	public String updateCurve(@PathVariable("id") Integer id, @Valid CurvePoint curvePoint,
 			BindingResult result, Model model) {
 		// TODO: check required fields, if valid call service to update Curve and return Curve list
-//		Integer curveId = curvePoint.getCurveId();
-//		double term = curvePoint.getTerm();
-//		double value = curvePoint.getValue();
 		if (result.hasErrors()) {
 			logger.error("POST /curvePoint/update/id has errors");
 			return "curvePoint/update";
